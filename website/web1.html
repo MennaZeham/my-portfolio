@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menna Nasser | UX/UI Designer</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 1.2rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      position: absolute;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .logo span {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #3498db;
+    }
+
+    .section {
+      padding: 6rem 2rem;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    #home {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    #home h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    #home h1 span {
+      color: #3498db;
+    }
+
+    #home p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .project {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+    }
+
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project h3 {
+      padding: 1rem;
+      margin: 0;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+
+    form textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    form button {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover {
+      background-color: #2980b9;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      #home h1 {
+        font-size: 2.2rem;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .logo {
+        position: static;
+        margin-bottom: 1rem;
+      }
+
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-content img {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    /* New styles for About image */
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      text-align: left;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .about-content img {
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-text {
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="image/Untitled design (1).png" alt="Logo" />
+      <span>Menna Nasser</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home" class="section">
+    <div class="container">
+      <h1>Hi, I'm <span>Menna Nasser</span></h1>
+      <p>UX/UI Designer specialized in crafting intuitive and user-friendly digital experiences using Figma.</p>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <h2>My Work</h2>
+      <div class="gallery">
+        <div class="project">
+          <img src="image/1.PNG" alt="Mood Café App">
+          <h3>Mood Café App – Seat Reservation Flow</h3>
+        </div>
+        <div class="project">
+          <img src="image/3.png" alt="Training Portal">
+          <h3>Student Training Portal – Responsive Web Design</h3>
+        </div>
+        <div class="project">
+          <img src="image/2.png" alt="UI Redesign">
+          <h3>Dashboard Redesign – Clean & Modern UI</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="image/4.jpg" alt="Menna Nasser">
+        <div class="about-text">
+          <p>
+            I’m <strong>Menna Nasser</strong>, a passionate UX/UI Designer focused on delivering intuitive and engaging digital experiences.
+            My design philosophy centers on usability, creativity, and consistency. I specialize in using <strong>Figma</strong> to build complete design systems, wireframes, prototypes, and high-fidelity interfaces.
+          </p>
+          <p>
+            I’ve worked on a variety of projects, from mobile apps to responsive websites, always keeping the user at the heart of every decision. I pay close attention to interaction design, user flows, and accessibility to ensure exceptional results.
+          </p>
+          <p>
+            <strong>Tools I use:</strong> Figma, Adobe XD, Photoshop, Illustrator, Trello, Notion, and Miro.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Menna Nasser. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
